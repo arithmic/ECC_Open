@@ -1,0 +1,10 @@
+{
+    "rust-analyzer.linkedProjects": [
+        "./stark252_curve/Cargo.toml",
+        "./bandersnatch_curve/Cargo.toml",
+        "./bls_curve/Cargo.toml",
+        "./jubjub_curve/Cargo.toml",
+        "./cheetah_curve/Cargo.toml",
+        "./babyjub_curve/Cargo.toml"
+    ]
+}

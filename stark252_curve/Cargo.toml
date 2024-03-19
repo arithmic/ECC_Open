@@ -1,0 +1,21 @@
+[package]
+name = "stark252_curve"
+version = "0.1.0"
+edition = "2021"
+
+
+[dependencies]
+# local import
+curve_traits = { version = "0.1.0", path = "../traits" }
+
+#stark field import
+stark252 = { git = "ssh://git@github.com/arithmic/field_trait.git", branch = "main" }
+
+# crypto import
+crypto_bigint = { git = "ssh://git@github.com/arithmic/crypto_bigint.git", branch = "main", features = [
+    "generic-array",
+    "zeroize",
+] }
+
+
+traits = { git = "ssh://git@github.com/arithmic/field_trait.git", branch = "main" }

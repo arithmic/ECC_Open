@@ -1,0 +1,18 @@
+[package]
+name = "curve"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[workspace]
+members = [
+    "bls_curve",
+    "BN_curve",
+    "babyjub_curve",
+    "cheetah_curve",
+    "jubjub_curve",
+    "stark252_curve",
+    "bandersnatch_curve",
+    "traits",
+    "grumpkin_curve"
+]

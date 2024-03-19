@@ -1,0 +1,13 @@
+[package]
+name = "curve_traits"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+crypto_bigint = { git = "ssh://git@github.com/arithmic/crypto_bigint.git", branch = "main", features = [
+    "generic-array",
+    "zeroize",
+] }
+rayon = "1.7.0"
+traits = { git = "ssh://git@github.com/arithmic/field_trait.git", branch = "main" }
+table = { git = "ssh://git@github.com/arithmic/table.git", branch = "main" }

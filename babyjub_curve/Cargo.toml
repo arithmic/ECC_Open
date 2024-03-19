@@ -1,0 +1,15 @@
+[package]
+name = "babyjub_curve"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bn254 = { git = "ssh://git@github.com/arithmic/field_trait.git", branch = "main" }
+
+# crypto import
+crypto_bigint = { git = "ssh://git@github.com/arithmic/crypto_bigint.git", branch = "main", features = [
+    "generic-array",
+    "zeroize",
+] }
+curve_traits = { version = "0.1.0", path = "../traits" }
+traits = { git = "ssh://git@github.com/arithmic/field_trait.git", branch = "main" }
