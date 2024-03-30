@@ -195,17 +195,21 @@ impl<C: CurveParams> ProjectivePoint<C> {
         exponents: &[Scalar<C>],
     ) -> ProjectivePoint<C> {
         let bits = bases.len().next_power_of_two().trailing_zeros();
-        assert_eq!(bases.len(), exponents.len(), "bases and exponents are of different length");
-        let window_bits:usize = match bits {
+        assert_eq!(
+            bases.len(),
+            exponents.len(),
+            "bases and exponents are of different length"
+        );
+        let window_bits: usize = match bits {
             0..=5 => 4,
             6..=9 => 5,
             10 => 6,
-            11|12 =>8,
-            13|14 => 10,
-            15=>11,
-            16..=18=>12,
-            19|20 => 16,
-            21..= u32::MAX => 17
+            11 | 12 => 8,
+            13 | 14 => 10,
+            15 => 11,
+            16..=18 => 12,
+            19 | 20 => 16,
+            21..=u32::MAX => 17,
         };
 
         //Stores the byte expression of all the exponents.
@@ -255,17 +259,21 @@ impl<C: CurveParams> ProjectivePoint<C> {
         exponents: &[C::FieldElement],
     ) -> ProjectivePoint<C> {
         let bits = bases.len().next_power_of_two().trailing_zeros();
-        assert_eq!(bases.len(), exponents.len(), "bases and exponents are of different length");
-        let window_bits:usize = match bits {
+        assert_eq!(
+            bases.len(),
+            exponents.len(),
+            "bases and exponents are of different length"
+        );
+        let window_bits: usize = match bits {
             0..=5 => 4,
             6..=9 => 5,
             10 => 6,
-            11|12 =>8,
-            13|14 => 10,
-            15=>11,
-            16..=18=>12,
-            19|20 => 16,
-            21..= u32::MAX => 17
+            11 | 12 => 8,
+            13 | 14 => 10,
+            15 => 11,
+            16..=18 => 12,
+            19 | 20 => 16,
+            21..=u32::MAX => 17,
         };
 
         //Stores the byte expression of all the exponents.
@@ -317,17 +325,21 @@ impl<C: CurveParams> ProjectivePoint<C> {
         max_bits: usize,
     ) -> ProjectivePoint<C> {
         let bits = bases.len().next_power_of_two().trailing_zeros();
-        assert_eq!(bases.len(), exponents.len(), "bases and exponents are of different length");
-        let window_bits:usize = match bits {
+        assert_eq!(
+            bases.len(),
+            exponents.len(),
+            "bases and exponents are of different length"
+        );
+        let window_bits: usize = match bits {
             0..=5 => 4,
             6..=9 => 5,
             10 => 6,
-            11|12 =>8,
-            13|14 => 10,
-            15=>11,
-            16..=18=>12,
-            19|20 => 16,
-            21..= u32::MAX => 17
+            11 | 12 => 8,
+            13 | 14 => 10,
+            15 => 11,
+            16..=18 => 12,
+            19 | 20 => 16,
+            21..=u32::MAX => 17,
         };
 
         //Stores the byte expression of all the exponents.
