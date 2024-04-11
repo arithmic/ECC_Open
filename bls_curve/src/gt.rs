@@ -2,7 +2,10 @@ use bls381::fp::Fp;
 use bls381::fp12::Fp12;
 use bls381::scalar::Scalar;
 use crypto_bigint::subtle::{Choice, ConstantTimeEq};
-use std::ops::{Add, AddAssign, Mul, Neg, Sub, SubAssign};
+use std::{
+    fmt::Display,
+    ops::{Add, AddAssign, Mul, Neg, Sub, SubAssign},
+};
 use traits::traits::Field;
 
 #[derive(Clone, Copy, Debug, Default, Eq)]
@@ -101,5 +104,27 @@ impl PartialOrd for Gt {
 impl Ord for Gt {
     fn cmp(&self, other: &Self) -> core::cmp::Ordering {
         self.0.cmp(&other.0)
+    }
+}
+
+impl Display for Gt {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        Ok(write!(
+            f,
+            "{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}-{}",
+            self.0.c0.c0.c0,
+            self.0.c0.c0.c1,
+            self.0.c0.c1.c0,
+            self.0.c0.c1.c1,
+            self.0.c0.c2.c0,
+            self.0.c0.c2.c1,
+            self.0.c1.c0.c0,
+            self.0.c1.c0.c1,
+            self.0.c1.c1.c0,
+            self.0.c1.c1.c1,
+            self.0.c1.c2.c0,
+            self.0.c1.c2.c1,
+        )
+        .expect("failed to write"))
     }
 }
