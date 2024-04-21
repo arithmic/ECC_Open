@@ -164,29 +164,26 @@ impl<C: CurveParams> ProjectivePoint<C> {
     /// .......................
     /// ............................
     /// Shamir's trick
-    // pub fn multi_exponentiation(point: Vec<AffinePoint<C>>, exponent: Vec<Scalar<C>>) -> Self {
-    //     // Convert Vec<Scalar> into Vec<[u64; fieldbits/64]>
-    //     let mut exp = Vec::new();
-    //     for value in exponent {
-    //         exp.push(value.to_words())
-    //     }
-    //     let mut result = Self::IDENTITY;
-    //     for outer_idx in (0..exp[0].len()).rev() {
-    //         for inner_idx in (0..64).rev() {
-    //             result = result.double();
-    //             //println!("{}",affinepoint::is_on_curve(result.to_affine()));
-    //             for (idx, value) in exp.iter().enumerate() {
-    //                 if ((value[outer_idx] >> inner_idx) & 1) == 1 {
-    //                     //convert the part to projective point
-    //                     //println!("{}",affinepoint::is_on_curve(point[idx]));
-    //                     result = result + point[idx].to_projective();
-    //                     //println!("{}",affinepoint::is_on_curve(result.to_affine()));
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     result
-    // }
+    pub fn multi_exponentiation(point: Vec<ProjectivePoint<C>>, exponent: Vec<Scalar<C>>) -> Self {
+        // Convert Vec<Scalar> into Vec<[u64; fieldbits/64]>
+        let mut exp = Vec::new();
+        for value in exponent {
+            exp.push(value.to_words())
+        }
+        let mut result = Self::IDENTITY;
+        for outer_idx in (0..exp[0].len()).rev() {
+            for inner_idx in (0..64).rev() {
+                result = result.double();
+                //println!("{}",affinepoint::is_on_curve(result.to_affine()));
+                for (idx, value) in exp.iter().enumerate() {
+                    if ((value[outer_idx] >> inner_idx) & 1) == 1 {
+                        result = result + point[idx];
+                    }
+                }
+            }
+        }
+        result
+    }
     ///.................
     /// ................Pippenger MSM...............
     /// .......................

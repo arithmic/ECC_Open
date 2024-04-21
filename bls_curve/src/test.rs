@@ -431,8 +431,8 @@ mod tests {
             expo.push(SCALAR_ARRAY[i]);
             ans += MULARR[i];
         }
-        let c = ProjectivePoint::pippenger_msm(&BLSARR1, &expo).to_affine();
-        assert_eq!(ans.to_affine(), c);
+        let expected_result = ProjectivePoint::pippenger_msm(&BLSARR1, &expo).to_affine();
+        assert_eq!(ans.to_affine(), expected_result);
     }
 
     #[test]
