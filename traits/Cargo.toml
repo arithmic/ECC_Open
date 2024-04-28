@@ -10,4 +10,4 @@ crypto_bigint = { git = "ssh://git@github.com/arithmic/crypto_bigint.git", branc
 ] }
 rayon = "1.7.0"
 traits = { git = "ssh://git@github.com/arithmic/Field_Open.git", branch = "main" }
-table = { git = "ssh://git@github.com/arithmic/Table_Open.git", branch = "main" }
+table = { git = "ssh://git@github.com/arithmic/Field_Open.git", branch = "main" }
