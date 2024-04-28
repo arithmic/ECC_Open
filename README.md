@@ -15,10 +15,10 @@ ECC curve repository contains the implementation of different elliptic curves. T
 
 ### How to use the ECC curve in your project
 Add the ECC curve crates into your project by adding the specific crate name(as in Cargo.toml file) <br>
- "crate_name" = {git = "ssh://git@github.com/arithmic/ecc_curve.git" , branch = "main"} <br>
-in your Cargo.toml file and run `cargo update` command.
+ "crate_name" = {git = "ssh://git@github.com/arithmic/ECC_Open.git" , branch = "main"} <br>
+in your Cargo.toml file
 
 #### Dependencies :
 1. crypto_bigint [https://github.com/arithmic/crypto_bigint].
-2. field traits repository [https://github.com/arithmic/field_trait.git].
+2. field traits repository [https://github.com/arithmic/Field_Open.git].
 
